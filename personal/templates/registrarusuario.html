@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/personal/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/personal/static/css/registrarusuario.css">
     <title>Registrar Usuario</title>
 </head>
+
 <body>
     <header>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <h2 class="title text-center">Registrar Usuario</h2>
-                    <form method="post" id="formulario" action="/personal/registrarusuario/">
-                        <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombre Completo" required>
-                        <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" required>
-                        <input type="password" class="form-control mb-3" name="contrasena" placeholder="Contraseña" required>
-                        <button type="submit" id="btnRegistrar" class="btn btn-block btn-lg btn-primary m-t-3">Registrar</button>
+        <div class="container-fluid" id="contenedor_cabecera">
+            <div class="row justify-content-left" id="cabecera1">
+                <img class="img" id="logoempresa" src="/personal/static/img/logo_super.png" alt="logo">
             </div>
-            <div class="row"></div>
+            <div class="row justify-content-center" id="cabecera2">
+                <h1 class="text-center">Supermercado Gestión</h1>
+            </div>
         </div>
     </header>
-    
-    <main>
 
+    <main>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="title text-center">Registrar Usuario</h2>
+                <form method="post" id="formulario" action="/personal/registrarusuario/">
+                    <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombres" required>
+                    <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellidos" required>
+                    <input type="email" class="form-control mb-3" name="email" placeholder="Correo Electrónico"
+                        required>
+                    <input type="text" class="form-control mb-3" name="telefono" placeholder="Teléfono" required>
+                    <input type="text" class="form-control mb-3" name="direccion" placeholder="Dirección" required>
+                    <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" required>
+                    <input type="password" class="form-control mb-3" name="contrasena" placeholder="Contraseña"
+                        required>
+                    <input type="password" class="form-control mb-3" name="confirmar_contrasena"
+                        placeholder="Confirmar Contraseña" required>
+                    <button type="submit" id="btnRegistrar"
+                        class="btn btn-block btn-lg btn-primary m-t-3">Registrar</button>
+            </div>
+            <div class="row"></div>
     </main>
 
     <footer>
@@ -32,4 +49,5 @@
 
     <script src="/personal/static/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
