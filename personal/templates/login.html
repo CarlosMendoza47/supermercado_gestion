@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/personal/static/css/login.css">
+    <link rel="stylesheet" href="/personal/static/css/bootstrap.min.css">
     <title>Inicio Sesion</title>
 </head>
 <body>
-    <h3>Bienvenido al Sistema</h3>
-    <form method="post" action="{% url 'login' %}">
-        <div>
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
+    
+    <div class="container" id="contenedro">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="title text-center">Bienvenido al Sistema</h2><br>
+                <img class="img text-center" id="logoempresa" src="/personal/static/img/logo_super.png" alt="logo">
+                <form method="post" id="formulario" action="/personal/login/">
+                    <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" required>
+                    <input type="password" class="form-control mb-3" name="contrasena" placeholder="Contraseña" required>
+                    <button type="button" id="btnIngresar" class="btn btn-block btn-lg btn-primary m-t-3">Ingresar</button>
+                </form>
+                <p class="text-center mt-3"><a href="/personal/templates/olvidasteContrasena.html">¿Olvidaste tu contraseña?</a></p>
+                <p class="text-center mt-3">No tienes una cuenta. <a href="/personal/templates/registrarusuario.html">Registrarse</a></p>
+            </div>
         </div>
-        <div>
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Iniciar Sesion</button>
+    </div>
+    
+        <script src="/personal/static/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
