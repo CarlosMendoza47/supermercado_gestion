@@ -5,22 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/personal/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/personal/static/css/cabecera.css">
     <link rel="stylesheet" href="/personal/static/css/registrarusuario.css">
+    <link rel="stylesheet" href="/personal/static/css/footer.css">
     <title>Registrar Usuario</title>
 </head>
 
 <body>
+    <!------------------------------------------------ CABECERA ------------------------------------------>
     <header>
         <div class="container-fluid" id="contenedor_cabecera">
             <div class="row justify-content-left" id="cabecera1">
-                <img class="img" id="logoempresa" src="/personal/static/img/logo_super.png" alt="logo">
+                <div class="col-md-3">
+                    <img class="img" id="logoempresa" src="/personal/static/img/logo_super.png" alt="logo">
+                </div>
+                <div class="col-md-6">
+                    <nav class="navbar bg-body-tertiary">
+                        <div class="container-fluid">
+                            <form class="d-flex" role="search">
+                                <input id="barra_buscar" class="form-control me-2" type="search" placeholder="Buscar"
+                                    aria-label="Search" />
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-3">
+                    <img src="/personal/static/img/usuario.png" alt="usuario" class="img-fluid" id="img_usuario">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Sesion
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/personal/templates/login.html">Iniciar Sesion</a></li>
+                            <li><a class="dropdown-item" href="#">Perfil Usuario</a></li>
+                            <li><a class="dropdown-item" href="#"></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </div>
             </div>
-            <div class="row justify-content-center" id="cabecera2">
-                <h1 class="text-center">Supermercado Gestión</h1>
+
+            <div class="row text-center" id="cabecera2">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navegador">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Personal
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Registrar Personal</a></li>
+                                        <li><a class="dropdown-item" href="#">Lista Personal</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
 
+    <!----------------------------------------------- CUERPO DE LA PAGINA ---------------------------------->
     <main>
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -43,8 +100,13 @@
             <div class="row"></div>
     </main>
 
-    <footer>
+    <!-------------------------------------------------- PIE DE PAGINA ------------------------------------>
 
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2023 Supermercado Gestión. Todos los derechos reservados.</p>
+            <p>Desarrollado por [Tu Nombre]</p>
+        </div>
     </footer>
 
     <script src="/personal/static/js/bootstrap.bundle.min.js"></script>

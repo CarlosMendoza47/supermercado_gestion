@@ -1,0 +1,29 @@
+#logoempresa {
+    width: 200px;
+    display: block;
+}
+
+header, nav {
+    background-color: #c5c0c0;
+    padding: 5px;
+}
+
+#cabecera1 {
+    margin: 20px auto;
+    text-align: left;
+}
+
+#cabecera2 {
+    margin: 10px auto;
+    text-align: right;
+}
+
+#img_usuario {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#barra_buscar {
+    width: 620px;
+}

@@ -1,25 +1,7 @@
-* {
+main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #d22b2e;
     padding: 0px;
+    margin: 50px;
 }
 
-#logoempresa {
-    width: 200px;
-    display: block;
-}
-
-#contenedor_cabecera {
-    background-color: #f9f9f9;
-    padding: 5px;
-}
-
-#cabecera1 {
-    margin: 20px auto;
-    text-align: left;
-}
-
-#cabecera2 {
-    margin: 10px auto;
-    text-align: right;
-}
