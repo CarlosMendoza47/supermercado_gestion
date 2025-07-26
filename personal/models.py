@@ -180,3 +180,4 @@ class LogSistema(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
     modelo_afectado = models.CharField(max_length=100)
     id_objeto = models.IntegerField(null=True, blank=True)
+    

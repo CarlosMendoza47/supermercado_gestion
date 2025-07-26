@@ -1,0 +1,137 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema Gestión Personal{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cabecera.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+
+<body>
+    <!------------------------------------------------ CABECERA ------------------------------------------>
+    <header>
+        <div class="container-fluid" id="contenedor_cabecera">
+            <div class="row justify-content-left" id="cabecera1">
+                <div class="col-md-3">
+                    <img class="img" id="logoempresa" src="/personal/static/img/logo_super.png" alt="logo">
+                </div>
+                <div class="col-md-6">
+                    <nav class="navbar bg-body-tertiary">
+                        <div class="container-fluid">
+                            <form class="d-flex" role="search">
+                                <input id="barra_buscar" class="form-control me-2" type="search" placeholder="Buscar"
+                                    aria-label="Search" />
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-3">
+                    <div class="row justify-content-end">
+                        <div class="col">
+                            <img src="/personal/static/img/usuario.png" alt="usuario" class="img-fluid"
+                                id="img_usuario">
+                        </div>
+                        <div class="col">
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Sesion</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                                        <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center" id="cabecera2">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navegador">
+                            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Mantenimiento</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Personal</a></li>
+                                        <li><a class="dropdown-item" href="#">Contratos</a></li>
+                                        <li><a class="dropdown-item" href="#">Licencias</a></li>
+                                        <li><a class="dropdown-item" href="#">Vacaciones</a></li>
+                                        <li><a class="dropdown-item" href="#">Permisos</a></li>
+                                        <li><a class="dropdown-item" href="#">Asistencia</a></li>
+                                        <li><a class="dropdown-item" href="#">Turno</a></li>
+                                        <li><a class="dropdown-item" href="#">Feriados</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Operaciones</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Asignar Permisos</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Turnos</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Feriados</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Vacaciones</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Licencias</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Contratos</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Asistencia</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Personal</a></li>
+                                        <li><a class="dropdown-item" href="#">Asignar Horario</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="/personal/templates/registrarusuario.html"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/personal/templates/registrarusuario.html">Registrar Usuario</a></li>
+                                        <li><a class="dropdown-item" href="#">Lista Usuarios</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Reportes</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Reporte Personal</a></li>
+                                        <li><a class="dropdown-item" href="#">Reporte Usuarios</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!------------------------------------------- CONTENIDO VARIABLE -------------------------------------->
+    <main class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!------------------------------------------------ PIE DE PÁGINA -------------------------------------->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Sistema Gestión Personal - Todos los derechos reservados.</p>
+            <p>Supermercados El Super</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

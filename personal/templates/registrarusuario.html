@@ -1,115 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'personal/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/personal/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/personal/static/css/cabecera.css">
-    <link rel="stylesheet" href="/personal/static/css/registrarusuario.css">
-    <link rel="stylesheet" href="/personal/static/css/footer.css">
-    <title>Registrar Usuario</title>
-</head>
+{% block title %}Registrar Usuario{% endblock %}
 
-<body>
-    <!------------------------------------------------ CABECERA ------------------------------------------>
-    <header>
-        <div class="container-fluid" id="contenedor_cabecera">
-            <div class="row justify-content-left" id="cabecera1">
-                <div class="col-md-3">
-                    <img class="img" id="logoempresa" src="/personal/static/img/logo_super.png" alt="logo">
-                </div>
-                <div class="col-md-6">
-                    <nav class="navbar bg-body-tertiary">
-                        <div class="container-fluid">
-                            <form class="d-flex" role="search">
-                                <input id="barra_buscar" class="form-control me-2" type="search" placeholder="Buscar"
-                                    aria-label="Search" />
-                                <button class="btn btn-outline-success" type="submit">Buscar</button>
-                            </form>
-                        </div>
-                    </nav>
-                </div>
-                <div class="col-md-3">
-                    <img src="/personal/static/img/usuario.png" alt="usuario" class="img-fluid" id="img_usuario">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Sesion
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/personal/templates/login.html">Iniciar Sesion</a></li>
-                            <li><a class="dropdown-item" href="#">Perfil Usuario</a></li>
-                            <li><a class="dropdown-item" href="#"></a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                </div>
-            </div>
-
-            <div class="row text-center" id="cabecera2">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
-                        <div class="collapse navbar-collapse" id="navegador">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Personal
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Registrar Personal</a></li>
-                                        <li><a class="dropdown-item" href="#">Lista Personal</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!----------------------------------------------- CUERPO DE LA PAGINA ---------------------------------->
-    <main>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h2 class="title text-center">Registrar Usuario</h2>
-                <form method="post" id="formulario" action="/personal/registrarusuario/">
-                    <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombres" required>
-                    <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellidos" required>
-                    <input type="email" class="form-control mb-3" name="email" placeholder="Correo Electrónico"
-                        required>
-                    <input type="text" class="form-control mb-3" name="telefono" placeholder="Teléfono" required>
-                    <input type="text" class="form-control mb-3" name="direccion" placeholder="Dirección" required>
-                    <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" required>
-                    <input type="password" class="form-control mb-3" name="contrasena" placeholder="Contraseña"
-                        required>
-                    <input type="password" class="form-control mb-3" name="confirmar_contrasena"
-                        placeholder="Confirmar Contraseña" required>
-                    <button type="submit" id="btnRegistrar"
-                        class="btn btn-block btn-lg btn-primary m-t-3">Registrar</button>
-            </div>
-            <div class="row"></div>
-    </main>
-
-    <!-------------------------------------------------- PIE DE PAGINA ------------------------------------>
-
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2023 Supermercado Gestión. Todos los derechos reservados.</p>
-            <p>Desarrollado por [Tu Nombre]</p>
-        </div>
-    </footer>
-
-    <script src="/personal/static/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="title text-center">Registrar Usuario</h2>
+        <form method="post" id="formulario" action="{% url 'registrar_usuario' %}">
+            {% csrf_token %}
+            <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombres" required>
+            <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellidos" required>
+            <input type="email" class="form-control mb-3" name="email" placeholder="Correo Electrónico" required>
+            <input type="text" class="form-control mb-3" name="telefono" placeholder="Teléfono" required>
+            <input type="text" class="form-control mb-3" name="direccion" placeholder="Dirección" required>
+            <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" required>
+            <input type="password" class="form-control mb-3" name="contrasena" placeholder="Contraseña" required>
+            <input type="password" class="form-control mb-3" name="confirmar_contrasena" placeholder="Confirmar Contraseña" required>
+            <button type="reset" id="btnLimpiar" class="btn btn-block btn-lg btn-outline-success m-t-3">Limpiar</button>
+            <button type="submit" id="btnRegistrar" class="btn btn-block btn-lg btn-primary m-t-3">Registrar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -5,3 +5,11 @@ main {
     margin: 50px;
 }
 
+btnRegistrar {
+    background-color: #d22b2e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,30 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/personal/static/css/login.css">
-    <link rel="stylesheet" href="/personal/static/css/bootstrap.min.css">
-    <title>Inicio Sesion</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Inicio Sesión</title>
 </head>
 <body>
-    
     <div class="container" id="contenedro">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="title text-center">Bienvenido al Sistema</h2><br>
-                <img class="img text-center" id="logoempresa" src="/personal/static/img/logo_super.png" alt="logo">
-                <form method="post" id="formulario" action="/personal/login/">
+                <img class="img text-center" id="logoempresa" src="{% static 'img/logo_super.png' %}" alt="logo">
+                
+                <form method="post" id="formulario">
+                    {% csrf_token %}
                     <input type="text" class="form-control mb-3" name="usuario" placeholder="Usuario" required>
                     <input type="password" class="form-control mb-3" name="contrasena" placeholder="Contraseña" required>
-                    <button type="button" id="btnIngresar" class="btn btn-block btn-lg btn-primary m-t-3">Ingresar</button>
+                    <button type="submit" id="btnIngresar" class="btn btn-block btn-lg btn-primary m-t-3">Ingresar</button>
                 </form>
-                <p class="text-center mt-3"><a href="/personal/templates/olvidasteContrasena.html">¿Olvidaste tu contraseña?</a></p>
+
+                <p class="text-center mt-3"><a href="#">¿Olvidaste tu contraseña?</a></p>
                 <p class="text-center mt-3">No tienes una cuenta. <a href="/personal/templates/registrarusuario.html">Registrarse</a></p>
             </div>
         </div>
     </div>
-    
-        <script src="/personal/static/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

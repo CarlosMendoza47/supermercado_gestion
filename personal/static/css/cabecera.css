@@ -3,19 +3,22 @@
     display: block;
 }
 
-header, nav {
-    background-color: #c5c0c0;
+header {
+    background-color:white;
     padding: 5px;
 }
 
 #cabecera1 {
     margin: 20px auto;
     text-align: left;
+    font-size: 20px;
 }
 
 #cabecera2 {
     margin: 10px auto;
     text-align: right;
+    font-size: px;
+    font-weight: bold;
 }
 
 #img_usuario {
@@ -26,4 +29,5 @@ header, nav {
 
 #barra_buscar {
     width: 620px;
+    background-color: white;
 }

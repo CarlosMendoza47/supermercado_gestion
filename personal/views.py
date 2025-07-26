@@ -1,13 +1,28 @@
-from django.contrib.auth.views import LoginView, LogoutView
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
 
-class CustomLoginView(LoginView):
-    template_name = 'personal/login.html'
+def login_view(request):
+    if request.method == 'POST':
+        usuario = request.POST.get('usuario')
+        contrasena = request.POST.get('contrasena')
+        user = authenticate(request, username=usuario, password=contrasena)
 
-class CustomLogoutView(LogoutView):
-    next_page = 'login'
+        if user is not None:
+            login(request, user)
+            return redirect('inicio')
+        else:
+            messages.error(request, 'Usuario o contraseña incorrectos.')
+
+    return render(request, 'login.html')  # Asegúrate de que esté en personal/templates/personal/login.html
+
 
 @login_required
 def inicio(request):
-    return render(request, 'personal/inicio.html')
+    return render(request, 'inicio.html')  # Crea este archivo HTML también
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
