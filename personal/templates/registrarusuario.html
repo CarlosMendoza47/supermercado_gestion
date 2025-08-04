@@ -7,7 +7,7 @@
 <div class="row justify-content-center">
     <div class="col-md-6">
         <h2 class="title text-center">Registrar Usuario</h2>
-        <form method="post" id="formulario" action="{% url 'registrar_usuario' %}">
+        <form method="post" id="formulario" action="{% url 'registro' %}">
             {% csrf_token %}
             <input type="text" class="form-control mb-3" name="nombre" placeholder="Nombres" required>
             <input type="text" class="form-control mb-3" name="apellido" placeholder="Apellidos" required>
